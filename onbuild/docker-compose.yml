@@ -1,0 +1,25 @@
+db:
+  image: mysql:5.5
+  environment:
+    MYSQL_ROOT_PASSWORD: changeme
+    MYSQL_USER: app
+    MYSQL_PASSWORD: changeme
+    MYSQL_DATABASE: app
+web:
+  build: .
+  ports:
+    - "8080:80"
+  links:
+    - db
+  environment:
+    APP_PROFILE: standard
+    APP_LOCALE: en-US
+    USER_MAIL: changeme@dev.null
+    USER_NAME: changeme
+    USER_PASS: changeme
+    SITE_MAIL: changeme@dev.null
+    SITE_NAME: 'Onbuild Drupal!'
+    DB_USER: app
+    DB_PASS: changeme
+    DB_HOST: db
+    DB_NAME: app
