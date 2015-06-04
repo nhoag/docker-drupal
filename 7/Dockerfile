@@ -23,4 +23,5 @@ ADD site-install.sh /usr/bin/site-install.sh
 ONBUILD RUN rm -r /var/www/html
 ONBUILD COPY ./app /var/www/html
 ONBUILD RUN chown -R www-data:www-data ./sites
-ONBUILD CMD /usr/bin/site-install.sh
+
+CMD ["/usr/bin/site-install.sh"]
