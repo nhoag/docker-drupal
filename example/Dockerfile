@@ -1,1 +1,1 @@
-FROM nhoag/drupal
+FROM nhoag/drupal:onbuild
